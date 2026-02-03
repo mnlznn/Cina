@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <title>Cina</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <section id="home">
+    <h1>Cina</h1>
+    <p class="muted">Scegli una città per aprire la guida locale.</p>
+    <div class="home-grid">
+      <div class="city-card" data-city="shenzhen"><div class="city-name">Shenzhen</div></div>
+      <div class="city-card" data-city="canton"><div class="city-name">Canton (Guangzhou)</div></div>
+      <div class="city-card" data-city="chongqing"><div class="city-name">Chongqing</div></div>
+      <div class="city-card" data-city="chengdu"><div class="city-name">Chengdu</div></div>
+    </div>
+  </section>
+
+  <!-- TEMPLATE CITY -->
+
+  <section id="city-shenzhen" class="city-wrap" hidden>
+    <div class="city-titlebar">
+      <button class="backToHome btn">← Città</button>
+      <h1>Shenzhen <small>· guida locale</small></h1>
+    </div>
+
+    <div class="city-menu">
+      <button class="city-tab" data-section="attrazioni">Attrazioni</button>
+      <button class="city-tab" data-section="cibi">Cibi tipici</button>
+      <button class="city-tab" data-section="ristoranti">Ristoranti</button>
+    </div>
+
+    <div class="city-section" id="shenzhen-attrazioni">
+      <h2>Attrazioni</h2>
+      <!-- INCOLLA QUI TUTTE LE ATTRAZIONI DI SHENZHEN -->
+    </div>
+
+    <div class="city-section" id="shenzhen-cibi" hidden>
+      <h2>Cibi tipici</h2>
+      <!-- INCOLLA QUI TUTTI I CIBI TIPICI DI SHENZHEN -->
+    </div>
+
+    <div class="city-section" id="shenzhen-ristoranti" hidden>
+      <div class="controls"><div class="row"><input id="search-shenzhen" placeholder="Cerca a Shenzhen..."></div></div>
+      <div class="favorites"><h2>Preferiti <button class="btn" id="clearFavs-shenzhen" style="margin-left:auto">Svuota</button></h2><div class="list"></div></div>
+      <h2>Ristoranti</h2>
+      <!-- INCOLLA QUI TUTTI I RISTORANTI DI SHENZHEN -->
+    </div>
+  </section>
+
+  <section id="city-canton" class="city-wrap" hidden>
+    <div class="city-titlebar">
+      <button class="backToHome btn">← Città</button>
+      <h1>Canton (Guangzhou) <small>· guida locale</small></h1>
+    </div>
+
+    <div class="city-menu">
+      <button class="city-tab" data-section="attrazioni">Attrazioni</button>
+      <button class="city-tab" data-section="cibi">Cibi tipici</button>
+      <button class="city-tab" data-section="ristoranti">Ristoranti</button>
+    </div>
+
+    <div class="city-section" id="canton-attrazioni">
+      <h2>Attrazioni</h2>
+      <!-- INCOLLA QUI TUTTE LE ATTRAZIONI DI CANTON -->
+    </div>
+
+    <div class="city-section" id="canton-cibi" hidden>
+      <h2>Cibi tipici</h2>
+      <!-- INCOLLA QUI TUTTI I CIBI TIPICI DI CANTON -->
+    </div>
+
+    <div class="city-section" id="canton-ristoranti" hidden>
+      <div class="controls"><div class="row"><input id="search-canton" placeholder="Cerca a Canton..."></div></div>
+      <div class="favorites"><h2>Preferiti <button class="btn" id="clearFavs-canton" style="margin-left:auto">Svuota</button></h2><div class="list"></div></div>
+      <h2>Ristoranti</h2>
+      <!-- INCOLLA QUI TUTTI I RISTORANTI DI CANTON -->
+    </div>
+  </section>
+
+  <section id="city-chongqing" class="city-wrap" hidden>
+    <div class="city-titlebar">
+      <button class="backToHome btn">← Città</button>
+      <h1>Chongqing <small>· guida locale</small></h1>
+    </div>
+
+    <div class="city-menu">
+      <button class="city-tab" data-section="attrazioni">Attrazioni</button>
+      <button class="city-tab" data-section="cibi">Cibi tipici</button>
+      <button class="city-tab" data-section="ristoranti">Ristoranti</button>
+    </div>
+
+    <div class="city-section" id="chongqing-attrazioni">
+      <h2>Attrazioni</h2>
+      <!-- INCOLLA QUI TUTTE LE ATTRAZIONI DI CHONGQING -->
+    </div>
+
+    <div class="city-section" id="chongqing-cibi" hidden>
+      <h2>Cibi tipici</h2>
+      <!-- INCOLLA QUI TUTTI I CIBI TIPICI DI CHONGQING -->
+    </div>
+
+    <div class="city-section" id="chongqing-ristoranti" hidden>
+      <div class="controls"><div class="row"><input id="search-chongqing" placeholder="Cerca a Chongqing..."></div></div>
+      <div class="favorites"><h2>Preferiti <button class="btn" id="clearFavs-chongqing" style="margin-left:auto">Svuota</button></h2><div class="list"></div></div>
+      <h2>Ristoranti</h2>
+      <!-- INCOLLA QUI TUTTI I RISTORANTI DI CHONGQING -->
+    </div>
+  </section>
+
+  <section id="city-chengdu" class="city-wrap" hidden>
+    <div class="city-titlebar">
+      <button class="backToHome btn">← Città</button>
+      <h1>Chengdu <small>· guida locale</small></h1>
+    </div>
+
+    <div class="city-menu">
+      <button class="city-tab" data-section="attrazioni">Attrazioni</button>
+      <button class="city-tab" data-section="cibi">Cibi tipici</button>
+      <button class="city-tab" data-section="ristoranti">Ristoranti</button>
+    </div>
+
+    <div class="city-section" id="chengdu-attrazioni">
+      <h2>Attrazioni</h2>
+      <!-- INCOLLA QUI TUTTE LE ATTRAZIONI DI CHENGDU -->
+    </div>
+
+    <div class="city-section" id="chengdu-cibi" hidden>
+      <h2>Cibi tipici</h2>
+      <!-- INCOLLA QUI TUTTI I CIBI TIPICI DI CHENGDU -->
+    </div>
+
+    <div class="city-section" id="chengdu-ristoranti" hidden>
+      <div class="controls"><div class="row"><input id="search-chengdu" placeholder="Cerca a Chengdu..."></div></div>
+      <div class="favorites"><h2>Preferiti <button class="btn" id="clearFavs-chengdu" style="margin-left:auto">Svuota</button></h2><div class="list"></div></div>
+      <h2>Ristoranti</h2>
+      <!-- INCOLLA QUI TUTTI I RISTORANTI DI CHENGDU -->
+    </div>
+  </section>
+
+  <div id="backToTop" title="Torna su">↑</div>
+  <script src="app.js"></script>
+</body>
+</html>
