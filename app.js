@@ -49,12 +49,14 @@ function resetTabs(page) {
 
   page.querySelectorAll('.city-section').forEach(sec => sec.hidden = true);
 
-  const def = page.querySelector(`#${city}-attrazioni`);
+  // Mostra il programma di default invece di Attrazioni
+  const def = page.querySelector(`#${city}-programma`);
   if (def) def.hidden = false;
 
-  const btn = page.querySelector('.city-tab[data-section="attrazioni"]');
+  const btn = page.querySelector('.city-tab[data-section="programma"]');
   page.querySelectorAll('.city-tab').forEach(b => b.classList.toggle('active', b === btn));
 }
+
 
 /* ==========
    Ricerca nei ristoranti
