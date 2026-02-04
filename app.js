@@ -66,15 +66,17 @@ function resetTabs(page) {
 
   input.addEventListener('input', () => {
     const q = input.value.trim().toLowerCase();
-    const wrap = document.querySelector(`#${city}-ristoranti .restaurants`);
+    const wrap = document.querySelector(`#${city}-ristoranti`);
     if (!wrap) return;
 
-    wrap.querySelectorAll('.card').forEach(card => {
+    // prendi tutte le card dentro il wrap, escludendo la sezione "favorites"
+    wrap.querySelectorAll(':scope > .card').forEach(card => {
       const text = card.innerText.toLowerCase();
       card.style.display = text.includes(q) ? '' : 'none';
     });
   });
 });
+
 
 /* ==========
    Preferiti permanenti (localStorage)
