@@ -97,12 +97,12 @@ h2 {
 /* input più grande e colore “piatto” */
 .controls input[type='text'] {
   flex: 1;
-  padding: 20px 24px;       /* più alto e largo */
-  border-radius: 12px;
-  border: 2px solid #ff5555; /* bordo rosso chiaro */
-  background-color: #8b0000; /* stesso colore del rettangolo */
-  color: #ffffff;            /* testo bianco */
-  font-size: 20px;           /* più grande */
+  padding: 24px 30px;         /* più spazio dentro */
+  border-radius: 16px;        /* angoli più arrotondati */
+  border: 2px solid #ff5555;  /* bordo rosso chiaro */
+  background-color: #8b0000;  /* stesso colore del rettangolo */
+  color: #ffffff;             /* testo bianco */
+  font-size: 20px;            /* testo più grande */
   transition: all 0.2s ease;
 }
 
