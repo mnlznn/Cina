@@ -88,7 +88,7 @@ h2 {
 }
 
 .city-card:hover::before {
-  background: rgba(0,0,0,0.4);    /* scurisce leggermente al passaggio */
+  background: rgba(0,0,0,0.35);   /* scurisce leggermente al passaggio */
   transform: scale(1.05);         /* leggero zoom */
 }
 
@@ -96,8 +96,8 @@ h2 {
   position: relative;
   z-index: 1;                      /* sopra overlay */
   background-color: rgba(0, 0, 0, 0.5); /* sfondo semi-trasparente solo sul testo */
-  padding: 8px 12px;
-  border-radius: 8px;
+  padding: 4px 8px;                /* più compatto sotto il testo */
+  border-radius: 4px;
   display: inline-block;           /* si riduce al testo */
   color: #ffffff;                  /* testo bianco */
 }
