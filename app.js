@@ -195,4 +195,10 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/sw.js').catch(() => {});
   });
    
+   window.addEventListener('load', () => {
+  if (!window.location.hash.includes('fresh')) {
+    window.location.href = window.location.href + '#fresh';
+    window.location.reload(true);
+  }
+});
 
