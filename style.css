@@ -117,6 +117,13 @@ h2 {
   font-size: 20px;            /* uguale al testo */
 }
 
+/* ===== BANDIERA ACCANTO AL TITOLO ===== */
+.flag {
+  font-size: 32px;        /* grandezza della bandiera */
+  margin-left: 8px;       /* spazio tra “Cina” e la bandiera */
+  vertical-align: middle; /* allinea la bandiera al centro rispetto al testo */
+}
+
 .btn {
   border: 1px solid #2a2f36; background: #1a1d22; color: #fff;
   border-radius: 8px; padding: 10px 16px; cursor: pointer; font-size: 15px;
