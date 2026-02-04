@@ -190,11 +190,5 @@ if (backToTop) {
 /* ==========
    PWA SW (registrazione)
    ========== */
-   
-   window.addEventListener('load', () => {
-  if (!window.location.hash.includes('fresh')) {
-    window.location.href = window.location.href + '#fresh';
-    window.location.reload(true);
-  }
-});
+  if ('serviceWorker' in navigator) { window.addEventListener('load', () => { navigator.serviceWorker.register('/sw.js').catch(() => {}); }); } // Forza ricarica senza cache una volta window.addEventListener('load', () => { if (!window.location.hash.includes('fresh')) { window.location.href = window.location.href + '#fresh'; window.location.reload(true); // ricarica completo senza cache } });
 
