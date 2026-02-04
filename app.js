@@ -190,10 +190,6 @@ if (backToTop) {
 /* ==========
    PWA SW (registrazione)
    ========== */
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js').catch(() => {});
-  });
    
    window.addEventListener('load', () => {
   if (!window.location.hash.includes('fresh')) {
