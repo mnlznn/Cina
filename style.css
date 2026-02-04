@@ -1,10 +1,10 @@
 :root {
-  --bg: #ff0000;
-  --card: #181a20;
-  --txt: #fff;
-  --muted: #c9d1d9;
-  --line: #333;
-  --accent: #8ab4ff;
+  --bg: #b22222;
+  --card: #8b0000;
+  --txt: #ffffff;
+  --muted:  #ffffff;
+  --line: #ff9999;
+  --accent: #ffcccc;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -56,7 +56,7 @@ h2 {
 .city-card {
   border: 1px solid var(--line);
   border-radius: 12px;
-  background: #12151a;
+  background: var(--card);
   padding: 20px;
   cursor: pointer;
   transition: transform 0.2s, border-color 0.2s;
@@ -64,8 +64,9 @@ h2 {
   flex-direction: column;
   justify-content: center;
   min-height: 120px;
+  color: var(--txt);
 }
-.city-card:hover { transform: translateY(-2px); border-color: #3a3f48; }
+.city-card:hover { transform: translateY(-2px); border-color: #ffcccc; }
 .city-name { font-size: 20px; font-weight: 700; margin: 0 0 6px; }
 .city-meta { color: var(--muted); font-size: 14px; }
 
