@@ -73,41 +73,49 @@ h2 {
 /* Usa l'attributo [hidden] per nascondere */
 [hidden] { display: none !important; }
 
+/* barra di ricerca "piatta" */
 .controls {
   position: sticky;
   top: 0;
-  background: linear-gradient(180deg, rgba(14,15,18,0.98) 0%, rgba(14,15,18,0.85) 100%);
-  backdrop-filter: saturate(180%) blur(10px);
-  -webkit-backdrop-filter: saturate(180%) blur(10px);
+  background-color: #8b0000; /* stesso colore del rettangolo interno */
   padding: 16px 0;
   z-index: 100;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid #ff9999;
   margin: 0 0 16px;
+  display: flex;
+  justify-content: center;
 }
-.controls .row { display: flex; gap: 12px; align-items: center; }
 
+.controls .row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  width: 100%;
+  max-width: 800px; /* barra centrale */
+}
+
+/* input più grande e colore “piatto” */
 .controls input[type='text'] {
-  flex: 1;                       /* occupa tutta la larghezza */
-  padding: 16px 20px;            /* più grande e comoda */
-  border-radius: 12px;           /* angoli arrotondati */
-  border: 2px solid #ff5555;     /* bordo rosso chiaro */
-  background-color: #ffffff;     /* sfondo bianco */
-  color: #000000;                /* testo nero */
-  font-size: 18px;               /* testo più grande */
+  flex: 1;
+  padding: 20px 24px;       /* più alto e largo */
+  border-radius: 12px;
+  border: 2px solid #ff5555; /* bordo rosso chiaro */
+  background-color: #8b0000; /* stesso colore del rettangolo */
+  color: #ffffff;            /* testo bianco */
+  font-size: 20px;           /* più grande */
   transition: all 0.2s ease;
 }
 
 .controls input[type='text']:focus {
   outline: none;
-  border-color: #ff0000;         /* bordo rosso acceso al focus */
-  box-shadow: 0 0 10px rgba(255,0,0,0.3); /* bagliore rosso */
+  border-color: #ff0000;     /* bordo rosso acceso al focus */
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
 }
 
 .controls input[type='text']::placeholder {
-  color: #888;                   /* placeholder grigio scuro */
-  font-size: 18px;               /* placeholder grande come il testo */
+  color: #ffcccc;            /* placeholder chiaro */
+  font-size: 20px;            /* uguale al testo */
 }
-
 
 .btn {
   border: 1px solid #2a2f36; background: #1a1d22; color: #fff;
