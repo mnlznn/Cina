@@ -1,5 +1,5 @@
 :root {
-  --bg: #0e0f12;
+  --bg: #ff0000;
   --card: #181a20;
   --txt: #fff;
   --muted: #c9d1d9;
@@ -84,11 +84,29 @@ h2 {
   margin: 0 0 16px;
 }
 .controls .row { display: flex; gap: 12px; align-items: center; }
+
 .controls input[type='text'] {
-  flex: 1; padding: 12px 16px; border-radius: 8px; border: 1px solid var(--line);
-  background: #111; color: var(--txt); font-size: 16px;
+  flex: 1;                       /* occupa tutta la larghezza disponibile */
+  padding: 16px 20px;            /* più alta e comoda da cliccare */
+  border-radius: 12px;            /* angoli arrotondati */
+  border: 2px solid #ff5555;      /* bordo leggermente rosso per richiamare lo sfondo */
+  background-color: #ffffff;      /* sfondo bianco */
+  color: #000000;                 /* testo nero */
+  font-size: 18px;                /* testo più grande */
+  transition: all 0.2s ease;     /* transizione morbida per focus */
 }
-.controls input[type='text']:focus { outline: none; border-color: var(--accent); }
+
+.controls input[type='text']:focus {
+  outline: none;
+  border-color: #ff0000;          /* bordo rosso acceso al focus */
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.3); /* leggero bagliore rosso */
+}
+
+.controls input[type='text']::placeholder {
+  color: #888;                   /* placeholder grigio scuro */
+  font-size: 18px;
+}
+
 
 .btn {
   border: 1px solid #2a2f36; background: #1a1d22; color: #fff;
