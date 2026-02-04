@@ -71,6 +71,15 @@ h2 {
 
 .city-card:hover { transform: translateY(-2px); border-color: #ffcccc; }
 .city-name { font-size: 20px; font-weight: 700; margin: 0 0 6px; }
+.city-name {
+  position: relative;
+  z-index: 1;
+  background: rgba(0,0,0,0.5); /* sfondo nero semi-trasparente */
+  padding: 4px 8px;            /* margini interni */
+  border-radius: 4px;
+  display: inline-block;        /* occupa solo quanto serve al testo */
+}
+
 .city-meta { color: var(--muted); font-size: 14px; }
 .city-card::before {
   content: "";
