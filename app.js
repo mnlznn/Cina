@@ -46,15 +46,12 @@ document.addEventListener('click', (e) => {
 
 function resetTabs(page) {
   // Nasconde tutte le sezioni
-  page.querySelectorAll('.city-section').forEach(sec => {
-    sec.hidden = true;
-  });
+  page.querySelectorAll('.city-section').forEach(sec => sec.hidden = true);
 
   // Rimuove lo stato "active" da tutte le tab
-  page.querySelectorAll('.city-tab').forEach(tab => {
-    tab.classList.remove('active');
-  });
+  page.querySelectorAll('.city-tab').forEach(tab => tab.classList.remove('active'));
 }
+
 
 
 /* ==========
