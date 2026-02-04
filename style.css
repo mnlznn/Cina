@@ -54,18 +54,21 @@ h2 {
 }
 
 .city-card {
-  border: 1px solid var(--line);
   border-radius: 12px;
-  background: var(--card);
-  padding: 20px;
-  cursor: pointer;
-  transition: transform 0.2s, border-color 0.2s;
+  min-height: 200px;              /* altezza fissa per tutti i riquadri */
+  color: white;                    /* testo leggibile sopra */
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  min-height: 120px;
-  color: var(--txt);
+  justify-content: flex-end;       /* testo in basso */
+  padding: 16px;
+  background-size: cover;          /* l'immagine riempie il riquadro */
+  background-position: center;     /* centrata */
+  background-repeat: no-repeat;    /* niente ripetizioni */
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s;
+  border: 1px solid var(--line);
 }
+
 .city-card:hover { transform: translateY(-2px); border-color: #ffcccc; }
 .city-name { font-size: 20px; font-weight: 700; margin: 0 0 6px; }
 .city-meta { color: var(--muted); font-size: 14px; }
