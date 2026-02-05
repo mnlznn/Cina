@@ -90,6 +90,19 @@ h2 {
   margin-bottom: 4px;
 }
 
+/* CARD IMMAGINI GRANDI */
+.image-card {
+  padding: 12px;
+}
+
+.image-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  cursor: zoom-in;
+}
+
 /* rimuoviamo overlay globale (::before) */
 .city-card::before {
   display: none;
