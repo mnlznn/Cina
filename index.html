@@ -723,11 +723,11 @@
 
     <div id="biglietti-voli" class="city-section" hidden>
   <h2>Voli</h2>    
-  <div class="card simple">
+   <div class="card image-card">
     <img src="img/volo1.jpg" alt="Volo 1">
   </div>
       
-  <div class="card simple">    
+   <div class="card image-card">
     <img src="img/volo2.jpg" alt="Volo 2">
   </div>
 </div>      
@@ -737,5 +737,34 @@
 
   <div id="backToTop" title="Torna su">↑</div>
   <script src="app.js"></script>
+   <script>
+  document.addEventListener('click', e => {
+    const img = e.target.closest('.image-card img');
+    if (!img) return;
+
+    const overlay = document.createElement('div');
+    overlay.style = `
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    `;
+
+    const bigImg = document.createElement('img');
+    bigImg.src = img.src;
+    bigImg.style = `
+      max-width: 96%;
+      max-height: 96%;
+      border-radius: 12px;
+    `;
+
+    overlay.appendChild(bigImg);
+    overlay.addEventListener('click', () => overlay.remove());
+    document.body.appendChild(overlay);
+  });
+  </script>
 </body>
 </html>
