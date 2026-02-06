@@ -25,12 +25,13 @@ a:hover { text-decoration: underline; }
 
 h1 { margin: 0 0 16px; font-size: 28px; }
 h2 {
-  color: var(--accent);
+  color: rgba(255, 204, 204, 0.75); /* accent più scuro e opaco */
   margin: 24px 0 12px;
   font-size: 20px;
   padding-bottom: 6px;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid rgba(255, 153, 153, 0.6);
 }
+
 
 .card {
   border: 1px solid var(--line);
