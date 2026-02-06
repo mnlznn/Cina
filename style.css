@@ -168,17 +168,10 @@ h1 small {
 }
 
 
-.s1 { transform: translate(15px, 5px) scale(0.5); }
-.s2 { transform: translate(25px, 15px) scale(0.5); }
-.s3 { transform: translate(25px, 30px) scale(0.5); }
-.s4 { transform: translate(15px, 40px) scale(0.5); }
-
-.s1, .s2, .s3, .s4 {
-  scale: 0.4;
-}
-
-
-
+.s1 { transform: translate(10px, 2px) scale(0.5); }
+.s2 { transform: translate(12px, 4px) scale(0.5); } 
+.s3 { transform: translate(12px, 7px) scale(0.5); } 
+.s4 { transform: translate(10px, 9px) scale(0.5); }
 
 
 /* Usa l'attributo [hidden] per nascondere */
