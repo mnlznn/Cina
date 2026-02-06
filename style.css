@@ -27,7 +27,6 @@ h1 { margin: 0 0 16px; font-size: 28px; }
 
 h2 {
   color: rgba(0, 0, 0, 0.9);      /* nero */
-  background: rgba(255,255,255,0.85); /* fondo chiaro */
   display: inline-block;
   padding: 4px 10px;
   border-radius: 6px;
