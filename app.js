@@ -168,6 +168,15 @@ document.addEventListener('click', (e) => {
   });
 });
 
+tab.addEventListener('click', () => {
+  tabs.forEach(t => t.classList.remove('active'));
+  sections.forEach(s => s.hidden = true);
+
+  tab.classList.add('active');
+  console.log('Active tab:', tab.dataset.section); // debug iPhone
+});
+
+
 /* ==========
    Back to top
    ========== */
