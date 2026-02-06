@@ -25,15 +25,12 @@ a:hover { text-decoration: underline; }
 
 h1 { margin: 0 0 16px; font-size: 28px; }
 
-h2 {
-  color: rgba(0, 0, 0, 0.9);      /* nero */
-  display: inline-block;
-  padding: 4px 10px;
-  border-radius: 6px;
-  margin: 24px 0 12px;
-  font-size: 20px;
-  border-bottom: none;
-}
+h2 { color: rgba(255, 160, 160, 0.5); 
+    background: rgba(0,0,0,0.45); 
+    display: inline-block; padding: 4px 10px; border-radius: 6px; margin: 24px 0 12px;
+    font-size: 20px; 
+    border-bottom: none;
+   }
 
 
 h1 small {
@@ -102,6 +99,22 @@ h1 small {
   margin-bottom: 4px;
 }
 
+/* stato attivo */
+.city-tab.active {
+  background: #ffde00;                   /* giallo stelle */
+  border-color: #ffe066;                 /* bordo più chiaro */
+  color: #1a1d22;                        /* testo scuro sopra giallo */
+  box-shadow: 0 0 8px rgba(255, 222, 0, 0.7); /* glow giallo stelle */
+}
+
+/* hover */
+.city-tab:hover {
+  background: #ffe066;                   /* giallo leggermente più chiaro */
+  border-color: #fff299;
+  box-shadow: 0 0 10px rgba(255, 222, 0, 0.5); /* glow morbido */
+}
+
+
 /* CARD IMMAGINI GRANDI */
 .image-card {
   padding: 12px;
@@ -120,7 +133,7 @@ h1 small {
   display: none;
 }
 
-/* === SFONDO STELLE ANIMATE === */
+/* === SFONDO STELLE  === */
 .china-bg {
   position: fixed;
   inset: 0;
