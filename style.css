@@ -167,10 +167,11 @@ h1 small {
   animation-duration: 9s;
 }
 
-.s1 { transform: translate(10px, 2px) scale(0.5); animation-delay: 0s; }
-.s2 { transform: translate(12px, 4px) scale(0.5); animation-delay: 1.5s; }
-.s3 { transform: translate(12px, 7px) scale(0.5); animation-delay: 3s; }
-.s4 { transform: translate(10px, 9px) scale(0.5); animation-delay: 4.5s; }
+.s1 { transform: translate(20px, 10px) scale(0.5); }
+.s2 { transform: translate(30px, 20px) scale(0.5); }
+.s3 { transform: translate(30px, 40px) scale(0.5); }
+.s4 { transform: translate(20px, 50px) scale(0.5); }
+
 
 
 
