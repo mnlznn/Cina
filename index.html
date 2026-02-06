@@ -1512,6 +1512,31 @@
     document.body.appendChild(overlay);
   });
   </script>
+
+<!-- JS per tab attive -->
+<script>
+const tabs = document.querySelectorAll('.city-tab');
+const sections = document.querySelectorAll('.city-section');
+
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    tabs.forEach(t => t.classList.remove('active'));
+    sections.forEach(s => s.hidden = true);
+
+    tab.classList.add('active');
+
+    const sectionId = 'shenzhen-' + tab.dataset.section;
+    const section = document.getElementById(sectionId);
+    if(section) section.hidden = false;
+  });
+});
+
+
+</script>
+
+
+
+
   
   <!-- background stelle fisse -->
   <svg class="china-bg" viewBox="0 0 30 20" preserveAspectRatio="xMidYMid slice">
@@ -1531,6 +1556,7 @@
   <polygon class="star small s4"
     points="5,3 6,6 9,6 6.5,8 7.5,11 5,9 2.5,11 3.5,8 1,6 4,6"/>
 </svg>
+
 
   
 </body>
