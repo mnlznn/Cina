@@ -113,6 +113,21 @@ h1 small {
   box-shadow: 0 0 10px rgba(255, 222, 0, 0.5); /* glow morbido */
 }
 
+.city-tab {
+  -webkit-tap-highlight-color: transparent; /* rimuove overlay */
+  -webkit-user-select: none;                /* previene selezione testo accidentale */
+  -webkit-touch-callout: none;              /* evita menu long-press */
+}
+
+.city-tab.active {
+  background: #ffde00; 
+  border-color: #ffe066;
+  color: #1a1d22;
+  box-shadow: 0 0 8px rgba(255, 222, 0, 0.7);
+  transform: translateZ(0); /* forza Safari a ridisegnare */
+}
+
+
 
 /* CARD IMMAGINI GRANDI */
 .image-card {
