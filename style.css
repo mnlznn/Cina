@@ -7,11 +7,7 @@
   --accent: #ffcccc;
 }
 
-* { 
-  box-sizing: border-box; 
-  margin: 0; 
-  padding: 0; 
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
   background: var(--bg);
@@ -28,13 +24,13 @@ a { color: #81c9ff; text-decoration: none; }
 a:hover { text-decoration: underline; }
 
 h1 { margin: 0 0 16px; font-size: 28px; }
-h2 { 
-  color: var(--accent); 
-  margin: 24px 0 12px;
-  font-size: 20px; 
-  padding-bottom: 6px; 
-  border-bottom: 1px solid var(--line); 
-}
+
+h2 { color: var(--accent); 
+    margin: 24px 0 12px;
+    font-size: 20px; 
+    padding-bottom: 6px; 
+    border-bottom: 1px solid var(--line); 
+   }
 
 h1 small {
   font-size: 0.55em;
@@ -43,7 +39,6 @@ h1 small {
   font-weight: 400;
 }
 
-/* === GENERAL CARDS === */
 
 .card {
   border: 1px solid var(--line);
@@ -55,26 +50,9 @@ h1 small {
   overflow: hidden;
   min-height: 100px;
 }
-
-.card b { 
-  display: block; 
-  font-size: 18px; 
-  margin-bottom: 10px; 
-}
-
-.card .meta { 
-  font-size: 14px; 
-  color: var(--muted); 
-  line-height: 1.6; 
-}
-
-.card .meta br { 
-  display: block; 
-  content: ""; 
-  margin: 6px 0; 
-}
-
-/* === GRID === */
+.card b { display: block; font-size: 18px; margin-bottom: 10px; padding-right: 0; }
+.card .meta { font-size: 14px; color: var(--muted); line-height: 1.6; }
+.card .meta br { display: block; content: ""; margin: 6px 0; }
 
 .home-grid {
   display: grid;
@@ -83,15 +61,13 @@ h1 small {
   margin: 20px 0 24px;
 }
 
-/* === CITY CARDS === */
-
 .city-card {
   position: relative;
   border-radius: 12px;
   min-height: 200px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-end;   /* testo in basso */
   padding: 16px;
   background-size: cover;
   background-position: center;
@@ -108,44 +84,52 @@ h1 small {
   border-color: #ffcccc;
 }
 
+/* sfondo solo dietro il testo */
 .city-text {
   position: relative;
   z-index: 1;
-  background-color: rgba(0, 0, 0, 0.4);
-  padding: 2px 6px;
+  background-color: rgba(0, 0, 0, 0.4); /* piccolo rettangolo trasparente */
+  padding: 2px 6px;                 /* piccolo padding */
   border-radius: 4px;
-  display: inline-block;
+  display: inline-block;             /* si riduce al testo */
   color: #ffffff;
   font-size: 20px;
   font-weight: 700;
   margin-bottom: 4px;
 }
 
-/* ACTIVE TAB */
-
+/* stato attivo */
 .city-tab.active {
-  background: #ffde00;
-  border-color: #ffe066;
-  color: #1a1d22;
-  box-shadow: 0 0 8px rgba(255, 222, 0, 0.7);
-  transform: translateZ(0);
+  background: #ffde00;                   /* giallo stelle */
+  border-color: #ffe066;                 /* bordo più chiaro */
+  color: #1a1d22;                        /* testo scuro sopra giallo */
+  box-shadow: 0 0 8px rgba(255, 222, 0, 0.7); /* glow giallo stelle */
 }
 
 /* hover */
 .city-tab:hover {
-  background: #ffe066;
+  background: #ffe066;                   /* giallo leggermente più chiaro */
   border-color: #fff299;
-  box-shadow: 0 0 10px rgba(255, 222, 0, 0.5);
+  box-shadow: 0 0 10px rgba(255, 222, 0, 0.5); /* glow morbido */
 }
 
 .city-tab {
-  -webkit-tap-highlight-color: transparent;
-  -webkit-user-select: none;
-  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent; /* rimuove overlay */
+  -webkit-user-select: none;                /* previene selezione testo accidentale */
+  -webkit-touch-callout: none;              /* evita menu long-press */
 }
 
-/* IMAGE CARDS */
+.city-tab.active {
+  background: #ffde00; 
+  border-color: #ffe066;
+  color: #1a1d22;
+  box-shadow: 0 0 8px rgba(255, 222, 0, 0.7);
+  transform: translateZ(0); /* forza Safari a ridisegnare */
+}
 
+
+
+/* CARD IMMAGINI GRANDI */
 .image-card {
   padding: 12px;
 }
@@ -158,12 +142,12 @@ h1 small {
   cursor: zoom-in;
 }
 
+/* rimuoviamo overlay globale (::before) */
 .city-card::before {
   display: none;
 }
 
-/* === ⭐ NUOVA VERSIONE UFFICIALE BANDIERA CINESE (COMPATIBILE iPHONE) === */
-
+/* === SFONDO STELLE  === */
 .china-bg {
   position: fixed;
   inset: 0;
@@ -171,39 +155,33 @@ h1 small {
   height: 100vh;
   z-index: -1;
   pointer-events: none;
-  background: #b22222;
 }
 
-.china-stars {
-  width: 100%;
-  height: 100%;
-  display: block;
-  preserveAspectRatio: xMidYMid meet;
-}
-
-.star polygon {
+/* stelle */
+.star {
   fill: #ffde00;
 }
 
-/* Safari iOS fix */
-.star {
-  transform-box: fill-box;
-  transform-origin: center;
-  -webkit-transform-origin: center;
-  -webkit-transform: translateZ(0);
+/* scala e posizione (coordinate SVG) */
+.big {
+  animation-duration: 9s;
 }
 
-.big { transform: scale(1); }
-.s1, .s2, .s3, .s4 { transform: scale(1); }
 
-/* === MISC === */
+.s1 { transform: translate(10px, 2px) scale(0.5); }
+.s2 { transform: translate(12px, 4px) scale(0.5); } 
+.s3 { transform: translate(12px, 7px) scale(0.5); } 
+.s4 { transform: translate(10px, 9px) scale(0.5); }
 
+
+/* Usa l'attributo [hidden] per nascondere */
 [hidden] { display: none !important; }
 
+/* barra di ricerca "piatta" */
 .controls {
   position: sticky;
   top: 0;
-  background-color: #8b0000;
+  background-color: #8b0000; /* stesso colore del rettangolo interno */
   padding: 16px 0;
   z-index: 100;
   border-bottom: 1px solid #ff9999;
@@ -217,184 +195,102 @@ h1 small {
   gap: 12px;
   align-items: center;
   width: 100%;
-  max-width: 800px;
+  max-width: 800px; /* barra centrale */
 }
 
+/* input più grande e colore “piatto” */
 .controls input[type='text'] {
   flex: 1;
-  padding: 24px 30px;
-  border-radius: 16px;
-  border: 2px solid #ff5555;
-  background-color: #8b0000;
-  color: #ffffff;
-  font-size: 20px;
+  padding: 24px 30px;         /* più spazio dentro */
+  border-radius: 16px;        /* angoli più arrotondati */
+  border: 2px solid #ff5555;  /* bordo rosso chiaro */
+  background-color: #8b0000;  /* stesso colore del rettangolo */
+  color: #ffffff;             /* testo bianco */
+  font-size: 20px;            /* testo più grande */
   transition: all 0.2s ease;
 }
 
 .controls input[type='text']:focus {
   outline: none;
-  border-color: #ff0000;
+  border-color: #ff0000;     /* bordo rosso acceso al focus */
   box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
 }
 
 .controls input[type='text']::placeholder {
-  color: #ffcccc;
-  font-size: 20px;
+  color: #ffcccc;            /* placeholder chiaro */
+  font-size: 20px;            /* uguale al testo */
 }
 
 .btn {
-  border: 1px solid #2a2f36; 
-  background: #1a1d22; 
-  color: #fff;
-  border-radius: 8px; 
-  padding: 10px 16px; 
-  cursor: pointer; 
-  font-size: 15px;
-  display: inline-flex; 
-  align-items: center; 
-  justify-content: center; 
-  gap: 6px;
-  transition: all 0.2s; 
-  white-space: nowrap;
+  border: 1px solid #2a2f36; background: #1a1d22; color: #fff;
+  border-radius: 8px; padding: 10px 16px; cursor: pointer; font-size: 15px;
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  transition: all 0.2s; white-space: nowrap;
 }
-
 .btn:hover { background: #20232a; border-color: #3a3f48; }
 .btn:active { transform: translateY(1px); }
 
-.fav {
-  position: absolute; 
-  left: 16px; 
-  top: 16px; 
-  font-size: 24px; 
-  color: #ffd166;
-  cursor: pointer; 
-  user-select: none; 
-  z-index: 5; 
-  padding: 6px 8px;
-  background: rgba(0,0,0,0.4); 
-  border-radius: 8px; 
-  width: 40px; 
-  height: 40px;
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
-  transition: all 0.2s;
-}
+.backToHome { margin-bottom: 16px; }
 
+.fav {
+  position: absolute; left: 16px; top: 16px; font-size: 24px; color: #ffd166;
+  cursor: pointer; user-select: none; z-index: 5; padding: 6px 8px;
+  background: rgba(0,0,0,0.4); border-radius: 8px; width: 40px; height: 40px;
+  display: flex; align-items: center; justify-content: center; transition: all 0.2s;
+}
 .fav:hover { background: rgba(0,0,0,0.6); transform: scale(1.1); }
 .fav.off { color: #666; }
 
 .badges {
-  display: flex; 
-  flex-wrap: wrap; 
-  gap: 6px; 
-  margin: 10px 0 15px 0;
-  max-width: 100%; 
-  text-align: left;
+  display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 15px 0;
+  max-width: 100%; text-align: left;
 }
-
 .badge {
-  font-size: 12px; 
-  color: #ddd; 
-  border: 1px solid #2a2f36; 
-  padding: 4px 8px;
-  border-radius: 999px; 
-  background: #14161b; 
-  white-space: nowrap;
-  overflow: hidden; 
-  text-overflow: ellipsis;
+  font-size: 12px; color: #ddd; border: 1px solid #2a2f36; padding: 4px 8px;
+  border-radius: 999px; background: #14161b; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
-
 .favorites .card .badges { display: none; }
 
 .mapbtn {
-  display: inline-block; 
-  margin-top: 10px; 
-  padding: 8px 14px; 
-  border: 1px solid #2a2f36;
-  border-radius: 8px; 
-  background: #1a1d22; 
-  color: #81c9ff; 
-  text-decoration: none; 
-  transition: all 0.2s;
+  display: inline-block; margin-top: 10px; padding: 8px 14px; border: 1px solid #2a2f36;
+  border-radius: 8px; background: #1a1d22; color: #81c9ff; text-decoration: none; transition: all 0.2s;
 }
-
 .mapbtn:hover { background: #20232a; border-color: #3a3f48; }
 
 #backToTop {
-  position: fixed; 
-  right: 20px; 
-  bottom: 20px; 
-  border-radius: 50%; 
-  width: 50px; 
-  height: 50px;
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
-  background: #20232a; 
-  color: #fff;
-  border: 1px solid #2a2f36; 
-  opacity: 0; 
-  pointer-events: none; 
-  transition: 0.3s; 
-  z-index: 200; 
-  font-size: 20px;
+  position: fixed; right: 20px; bottom: 20px; border-radius: 50%; width: 50px; height: 50px;
+  display: flex; align-items: center; justify-content: center; background: #20232a; color: #fff;
+  border: 1px solid #2a2f36; opacity: 0; pointer-events: none; transition: 0.3s; z-index: 200; font-size: 20px;
 }
-
 #backToTop.show { opacity: 1; pointer-events: auto; }
 #backToTop:hover { background: #2a2f36; transform: scale(1.1); }
 
 .city-wrap h1 { margin-top: 10px; }
 .city-wrap h1 small { color: #9fb3ff; font-weight: 400; font-size: 18px; }
-
 .city-wrap .favorites { margin: 20px 0; }
-
 .city-wrap .favorites h2 {
-  color: #f7cc66; 
-  margin: 0 0 12px; 
-  display: flex; 
-  align-items: center; 
-  gap: 10px;
+  color: #f7cc66; margin: 0 0 12px; display: flex; align-items: center; gap: 10px;
 }
-
 .city-wrap .favorites .empty {
-  color: var(--muted); 
-  font-size: 15px; 
-  padding: 20px; 
-  text-align: center;
-  border: 1px dashed var(--line); 
-  border-radius: 8px;
+  color: var(--muted); font-size: 15px; padding: 20px; text-align: center;
+  border: 1px dashed var(--line); border-radius: 8px;
 }
+.card b .icon { margin-right: 8px; font-size: 20px; }
 
-/* MENU TABS */
-
+/* MENU INTERNO (tabs) */
 .city-menu {
-  display: flex; 
-  gap: 12px; 
-  margin: 20px 0;
+  display: flex; gap: 12px; margin: 20px 0;
 }
-
 .city-tab {
-  padding: 10px 18px; 
-  border-radius: 8px; 
-  background: #1a1d22;
-  border: 1px solid #2a2f36; 
-  color: #fff; 
-  cursor: pointer; 
-  font-weight: 600;
+  padding: 10px 18px; border-radius: 8px; background: #1a1d22;
+  border: 1px solid #2a2f36; color: #fff; cursor: pointer; font-weight: 600;
   transition: all .2s ease;
 }
+.city-tab:hover { background: #20232a; border-color: #3a3f48; }
+.city-section { margin-top: 20px; }
 
-.city-tab:hover { 
-  background: #20232a; 
-  border-color: #3a3f48; 
-}
-
-.city-section { 
-  margin-top: 20px; 
-}
-
-/* --- RESPONSIVE --- */
+/* Stato attivo (opzionale, quando vorrai aggiungere .active via JS)
+.city-tab.active { background:#0b5fff; border-color:#0b5fff; } */
 
 @media (max-width: 640px) {
   body { padding: 12px; }
@@ -410,8 +306,10 @@ h1 small {
   .btn { padding: 9px 14px; font-size: 14px; }
   .home-grid { gap: 12px; margin: 16px 0 20px; }
   .city-card { padding: 16px; min-height: 100px; }
+  .city-name { font-size: 18px; }
+  .city-meta { font-size: 13px; }
+  #backToTop { right: 16px; bottom: 16px; width: 44px; height: 44px; font-size: 18px; }
 }
-
 @media (max-width: 400px) {
   body { padding: 10px; }
   .home-grid { grid-template-columns: 1fr; }
@@ -420,4 +318,3 @@ h1 small {
   .badge { font-size: 10px; padding: 2px 5px; }
   .fav { left: 8px; top: 8px; width: 32px; height: 32px; font-size: 18px; }
 }
-``
