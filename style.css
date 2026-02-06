@@ -167,10 +167,16 @@ h1 small {
   animation-duration: 9s;
 }
 
-.s1 { transform: translate(20px, 10px) scale(0.5); }
-.s2 { transform: translate(30px, 20px) scale(0.5); }
-.s3 { transform: translate(30px, 40px) scale(0.5); }
-.s4 { transform: translate(20px, 50px) scale(0.5); }
+
+.s1 { transform: translate(15px, 5px) scale(0.5); }
+.s2 { transform: translate(25px, 15px) scale(0.5); }
+.s3 { transform: translate(25px, 30px) scale(0.5); }
+.s4 { transform: translate(15px, 40px) scale(0.5); }
+
+.s1, .s2, .s3, .s4 {
+  scale: 0.4;
+}
+
 
 
 
