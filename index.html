@@ -1459,64 +1459,61 @@
    <div class="card image-card">
     <img src="img/?????" alt="Volo 2">
   </div>
-</div>
+</div> 
 </div>    
-
+    
 <div id="biglietti-hotel" class="city-section" hidden>
   <h2>Hotel</h2>    
-    
-  <div class="card image-card">
-    <img src="img/?????" alt="Chongqing">
+   
+ <div class="card image-card">
+    <img src="???????" alt="Chongqing">
   </div>
 
-  <div class="card image-card">
-    <img src="img/?????" alt="Canton">
+   <div class="card image-card">
+    <img src="img/???????" alt="Canton">
   </div>
   
-  <div class="card image-card">
-    <img src="img/?????" alt="Shenzhen">
+   <div class="card image-card">
+    <img src="img/??????" alt="Shenzhen">
   </div>
-</div>
-
+ </div>
+    
 </section>
 
-<!-- Torna su -->
-<div id="backToTop" title="Torna su">↑</div>
+  <div id="backToTop" title="Torna su">↑</div>
+  <script src="app.js"></script>
+  
+   <script>
+  document.addEventListener('click', e => {
+    const img = e.target.closest('.image-card img');
+    if (!img) return;
 
-<script src="app.js"></script>
+    const overlay = document.createElement('div');
+    overlay.style = `
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    `;
 
-<!-- Zoom immagini -->
-<script>
-document.addEventListener('click', e => {
-  const img = e.target.closest('.image-card img');
-  if (!img) return;
+    const bigImg = document.createElement('img');
+    bigImg.src = img.src;
+    bigImg.style = `
+      max-width: 96%;
+      max-height: 96%;
+      border-radius: 12px;
+    `;
 
-  const overlay = document.createElement('div');
-  overlay.style = `
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.9);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-  `;
+    overlay.appendChild(bigImg);
+    overlay.addEventListener('click', () => overlay.remove());
+    document.body.appendChild(overlay);
+  });
+  </script>
 
-  const bigImg = document.createElement('img');
-  bigImg.src = img.src;
-  bigImg.style = `
-    max-width: 96%;
-    max-height: 96%;
-    border-radius: 12px;
-  `;
-
-  overlay.appendChild(bigImg);
-  overlay.addEventListener('click', () => overlay.remove());
-  document.body.appendChild(overlay);
-});
-</script>
-
-<!-- JS per tab -->
+<!-- JS per tab attive -->
 <script>
 const tabs = document.querySelectorAll('.city-tab');
 const sections = document.querySelectorAll('.city-section');
@@ -1530,94 +1527,37 @@ tabs.forEach(tab => {
 
     const sectionId = 'shenzhen-' + tab.dataset.section;
     const section = document.getElementById(sectionId);
-    if (section) section.hidden = false;
+    if(section) section.hidden = false;
   });
 });
+
+
 </script>
 
-<!-- ⭐ NUOVO SFONDO STELLE (UFFICIALE, COMPATIBILE iPHONE) -->
-<div class="china-bg">
-<svg viewBox="0 0 30 20" class="china-stars" aria-hidden="true">
 
-  <!-- Stella grande -->
-  <g class="star big" transform="translate(5,5)">
-    <polygon points="
-      0,-3 
-      0.88,-0.92 
-      2.85,-0.92 
-      1.05,0.35 
-      1.76,2.71 
-      0,1.35 
-      -1.76,2.71 
-      -1.05,0.35 
-      -2.85,-0.92 
-      -0.88,-0.92
-    "/>
-  </g>
 
-  <!-- Stelline ufficiali + rotazione verso quella grande -->
-  <g class="star s1" transform="translate(10,2) rotate(-30)">
-    <polygon points="
-      0,-1 
-      0.29,-0.31 
-      0.95,-0.31 
-      0.35,0.12 
-      0.59,0.88
-      0,0.44 
-      -0.59,0.88 
-      -0.35,0.12 
-      -0.95,-0.31 
-      -0.29,-0.31
-    "/>
-  </g>
 
-  <g class="star s2" transform="translate(12,4) rotate(5)">
-    <polygon points="
-      0,-1 
-      0.29,-0.31 
-      0.95,-0.31 
-      0.35,0.12 
-      0.59,0.88
-      0,0.44 
-      -0.59,0.88 
-      -0.35,0.12 
-      -0.95,-0.31 
-      -0.29,-0.31
-    "/>
-  </g>
+  
+  <!-- background stelle fisse -->
+  <svg class="china-bg" viewBox="0 0 30 20" preserveAspectRatio="xMidYMid slice">
+    ...
 
-  <g class="star s3" transform="translate(12,7) rotate(20)">
-    <polygon points="
-      0,-1 
-      0.29,-0.31 
-      0.95,-0.31 
-      0.35,0.12 
-      0.59,0.88
-      0,0.44 
-      -0.59,0.88 
-      -0.35,0.12 
-      -0.95,-0.31 
-      -0.29,-0.31
-    "/>
-  </g>
-
-  <g class="star s4" transform="translate(10,9) rotate(-15)">
-    <polygon points="
-      0,-1 
-      0.29,-0.31 
-      0.95,-0.31 
-      0.35,0.12 
-      0.59,0.88
-      0,0.44 
-      -0.59,0.88 
-      -0.35,0.12 
-      -0.95,-0.31 
-      -0.29,-0.31
-    "/>
-  </g>
-
+<!-- Stella grande -->
+  <polygon class="star big"
+    points="5,3 6,6 9,6 6.5,8 7.5,11 5,9 2.5,11 3.5,8 1,6 4,6"/>
+    
+  <!-- Stelle piccole -->
+  <polygon class="star small s1"
+    points="5,3 6,6 9,6 6.5,8 7.5,11 5,9 2.5,11 3.5,8 1,6 4,6"/>
+  <polygon class="star small s2"
+    points="5,3 6,6 9,6 6.5,8 7.5,11 5,9 2.5,11 3.5,8 1,6 4,6"/>
+  <polygon class="star small s3"
+    points="5,3 6,6 9,6 6.5,8 7.5,11 5,9 2.5,11 3.5,8 1,6 4,6"/>
+  <polygon class="star small s4"
+    points="5,3 6,6 9,6 6.5,8 7.5,11 5,9 2.5,11 3.5,8 1,6 4,6"/>
 </svg>
-</div>
 
+
+  
 </body>
 </html>
